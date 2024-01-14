@@ -7,6 +7,7 @@ let prevNum = "";
 let operation;
 let prevOperation = '+';
 let answer = 0;
+let charAt = 1;
 
 const displayPrev = document.querySelector('.prev');
 const displayOperation =  document.querySelector('.op');
@@ -15,7 +16,7 @@ const displayAnswer = document.querySelector('.ans');
 
 numbers.forEach(button => {
     button.addEventListener('click', (e)=> {
-        currNum += e.target.name;
+        currNum += e.target.name
         displayCurrent.textContent = currNum;
     })
 });
@@ -47,7 +48,6 @@ equalsTo.addEventListener('click', ()=> {
     } else {
         displayAnswer.textContent = "ERROR"
     }
-   
 })
 
 document.querySelector(".delete").addEventListener('click', () => {
@@ -59,11 +59,12 @@ document.querySelector(".delete").addEventListener('click', () => {
 document.querySelector('.clear').addEventListener('click', ()=> {
     currNum = "";
     prevNum = "";
-    operation = "";
     displayCurrent.textContent = "";
     displayOperation.textContent = "";
     displayPrev.textContent = "";
     displayAnswer.textContent = ""; 
+    answer = 0;
+    prevOperation = "+";
 });
 
 function calculate(Operation, PrevNum, CurrNum) {
@@ -84,3 +85,14 @@ function calculate(Operation, PrevNum, CurrNum) {
             return answer = 0;
     }
 }
+
+document.querySelector('.fix').addEventListener('click', ()=> {
+    answer = answer.toFixed(2);
+    displayAnswer.textContent = answer;
+})
+
+document.querySelector('.precision').addEventListener('click', ()=> {
+    
+    answer = answer.toFixed([answer].length-1);
+    displayAnswer.textContent = answer;
+})
