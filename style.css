@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+:root {
+    font-size: 16px;
+    --bgcolor: skyblue;
+    --bgcolor2: azure;
+    --shadow: darkcyan;
+}
+
+body {
+    background: var(--bgcolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    max-height: 1080px;
+}
+
+#main {
+    background-color: var(--bgcolor2);
+    width: 350px;
+    height: 658px;
+    margin: 1rem;
+    box-shadow: 2px 2px 2px var(--shadow), 4px 4px 20px var(--shadow);
+}
+
+header {
+    margin: 1rem auto;
+    padding: .5rem;
+    border: .5px solid rgba(0, 0, 0, 0.5);
+    max-width: 200px;
+    text-align: center;
+}
+
+#display {
+    height: 120px;
+    margin: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid black;
+    box-shadow: inset 2px 2px 8px var(--shadow);
+    overflow: hidden;
+    width: 282px;
+}
+
+#display div {
+    display: flex;
+    height: 34%;
+    justify-content: right;
+}
+
+.ans-container {
+    display: flex;
+    height: 66%;
+    width: 282px;
+    font-size: 40px;
+    align-items: center;
+    justify-content: right;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+}
+
+.ans-container::-webkit-scrollbar {
+    width: 200px;
+}
+
+.ans-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#buttons {
+    margin: 3rem auto;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    margin: 4px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 2px 2px 4px var(--shadow);
+}
+
+button:hover {
+    box-shadow: inset 2px 2px 4px var(--shadow);
+}
+
+#numbers {
+    width: 78%;
+}
+
+#operators {
+    width: 20%;
+}
+
+p {
+    margin: auto 0;
+    padding: 1rem;
+    max-width: 286px;
+    text-align: right;
+}
